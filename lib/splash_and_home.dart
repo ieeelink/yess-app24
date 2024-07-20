@@ -27,7 +27,8 @@ class SplashScreenAndHome extends StatefulWidget {
   State<SplashScreenAndHome> createState() => _SplashScreenAndHomeState();
 }
 
-class _SplashScreenAndHomeState extends State<SplashScreenAndHome> with TickerProviderStateMixin {
+class _SplashScreenAndHomeState extends State<SplashScreenAndHome>
+    with TickerProviderStateMixin {
   bool _logoMovedUp = false;
   late AnimationController _controller;
   late Animation<double> _animation;
@@ -78,9 +79,12 @@ class _SplashScreenAndHomeState extends State<SplashScreenAndHome> with TickerPr
           AnimatedPositioned(
             duration: const Duration(seconds: 1),
             curve: Curves.easeInOut,
-            top: _logoMovedUp ? 100.0 : MediaQuery.of(context).size.height / 2 - 100,
+            top: _logoMovedUp
+                ? 100.0
+                : MediaQuery.of(context).size.height / 2 - 100,
             left: MediaQuery.of(context).size.width / 2 - 100,
-            child: Image.asset('assets/logo.png',
+            child: Image.asset(
+              'assets/logo.png',
               width: 200,
               height: 200,
             ),
@@ -90,7 +94,9 @@ class _SplashScreenAndHomeState extends State<SplashScreenAndHome> with TickerPr
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SizedBox(height: 250), // Adjust height to position text fields and button
+                const SizedBox(
+                    height:
+                        250), // Adjust height to position text fields and button
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 50.0),
                   child: Column(
@@ -110,11 +116,26 @@ class _SplashScreenAndHomeState extends State<SplashScreenAndHome> with TickerPr
                       ),
                       const SizedBox(height: 20),
                       ElevatedButton(
-
                         onPressed: () {
                           // Handle login action
                         },
-                        child: const Text('Login'),
+                        child: const Text(
+                          'LOGIN',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontFamily: 'Karma',
+                            fontWeight: FontWeight.w400,
+                            height: 0,
+                          ),
+                        ),
+                        style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all<Color>(
+                              Color(0xFF2B2849)), // Change button color
+                          minimumSize: MaterialStateProperty.all<Size>(
+                              Size(300, 50)), // Change button size
+                        ),
                       ),
                     ],
                   ),

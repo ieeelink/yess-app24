@@ -14,7 +14,7 @@ class _MapPageState extends State<MapPage> {
         debugShowCheckedModeBanner: false,
         home: Scaffold(
           body: Container(
-            padding: EdgeInsets.all(10),
+            padding: EdgeInsets.all(20),
             color: Colors.white,
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
@@ -41,7 +41,7 @@ class _MapPageState extends State<MapPage> {
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width,
-                  height: 400,
+                  height: 300,
                   color: Color(0xFF9A95CE),
                 )
               ],

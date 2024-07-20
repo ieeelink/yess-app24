@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yess_app/map.dart';
 
 void main() {
   runApp(const MyApp());
@@ -117,7 +118,11 @@ class _SplashScreenAndHomeState extends State<SplashScreenAndHome>
                       const SizedBox(height: 20),
                       ElevatedButton(
                         onPressed: () {
-                          // Handle login action
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => MapPage(),
+                              ));
                         },
                         child: const Text(
                           'LOGIN',

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:yess_app/map.dart';
+import 'login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -49,7 +49,7 @@ class _SplashScreenAndHomeState extends State<SplashScreenAndHome>
   }
 
   _startAnimation() async {
-    await Future.delayed(const Duration(seconds: 1));
+    await Future.delayed(const Duration(seconds: 2));
     setState(() {
       _logoMovedUp = true;
     });
@@ -92,60 +92,18 @@ class _SplashScreenAndHomeState extends State<SplashScreenAndHome>
           ),
           FadeTransition(
             opacity: _animation,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const SizedBox(
-                    height:
-                        250), // Adjust height to position text fields and button
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 50.0),
-                  child: Column(
-                    children: [
-                      const TextField(
-                        decoration: InputDecoration(
-                          labelText: 'Name',
-                          border: OutlineInputBorder(),
-                        ),
-                      ),
-                      const SizedBox(height: 20),
-                      const TextField(
-                        decoration: InputDecoration(
-                          labelText: 'Ticket ID',
-                          border: OutlineInputBorder(),
-                        ),
-                      ),
-                      const SizedBox(height: 20),
-                      ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => MapPage(),
-                              ));
-                        },
-                        child: const Text(
-                          'LOGIN',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                            fontFamily: 'Karma',
-                            fontWeight: FontWeight.w400,
-                            height: 0,
-                          ),
-                        ),
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(
-                              Color(0xFF2B2849)), // Change button color
-                          minimumSize: MaterialStateProperty.all<Size>(
-                              Size(300, 50)), // Change button size
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+            child: Center(
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LoginScreen(),
+                    ),
+                  );
+                },
+                child: const Text('Proceed to Login'),
+              ),
             ),
           ),
         ],

@@ -47,7 +47,7 @@ class _SplashScreenAndHomeState extends State<SplashScreenAndHome> with TickerPr
   }
 
   _startAnimation() async {
-    await Future.delayed(const Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 1));
     setState(() {
       _logoMovedUp = true;
     });
@@ -95,14 +95,14 @@ class _SplashScreenAndHomeState extends State<SplashScreenAndHome> with TickerPr
                   padding: const EdgeInsets.symmetric(horizontal: 50.0),
                   child: Column(
                     children: [
-                      TextField(
+                      const TextField(
                         decoration: InputDecoration(
                           labelText: 'Name',
                           border: OutlineInputBorder(),
                         ),
                       ),
                       const SizedBox(height: 20),
-                      TextField(
+                      const TextField(
                         decoration: InputDecoration(
                           labelText: 'Ticket ID',
                           border: OutlineInputBorder(),
@@ -110,10 +110,11 @@ class _SplashScreenAndHomeState extends State<SplashScreenAndHome> with TickerPr
                       ),
                       const SizedBox(height: 20),
                       ElevatedButton(
+
                         onPressed: () {
                           // Handle login action
                         },
-                        child: Text('Login'),
+                        child: const Text('Login'),
                       ),
                     ],
                   ),

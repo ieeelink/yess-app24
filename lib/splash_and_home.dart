@@ -1,26 +1,6 @@
 import 'package:flutter/material.dart';
 import 'login.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Splash Screen Animation Example',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const SplashScreenAndHome(),
-    );
-  }
-}
-
 class SplashScreenAndHome extends StatefulWidget {
   const SplashScreenAndHome({super.key});
 
@@ -28,39 +8,19 @@ class SplashScreenAndHome extends StatefulWidget {
   State<SplashScreenAndHome> createState() => _SplashScreenAndHomeState();
 }
 
-class _SplashScreenAndHomeState extends State<SplashScreenAndHome>
-    with TickerProviderStateMixin {
-  bool _logoMovedUp = false;
-  late AnimationController _controller;
-  late Animation<double> _animation;
-
+class _SplashScreenAndHomeState extends State<SplashScreenAndHome> {
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(
-      duration: const Duration(seconds: 2),
-      vsync: this,
-    );
-    _animation = CurvedAnimation(
-      parent: _controller,
-      curve: Curves.easeIn,
-    );
-    _startAnimation();
+    _navigateToLogin();
   }
 
-  _startAnimation() async {
-    await Future.delayed(const Duration(seconds: 2));
-    setState(() {
-      _logoMovedUp = true;
-    });
-    await Future.delayed(const Duration(seconds: 1));
-    _controller.forward();
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
+  _navigateToLogin() async {
+    await Future.delayed(const Duration(seconds: 3));
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => const LoginScreen()),
+    );
   }
 
   @override
@@ -77,33 +37,11 @@ class _SplashScreenAndHomeState extends State<SplashScreenAndHome>
             alignment: Alignment.bottomCenter,
             child: Image.asset('assets/splash_bottom.png'),
           ),
-          AnimatedPositioned(
-            duration: const Duration(seconds: 1),
-            curve: Curves.easeInOut,
-            top: _logoMovedUp
-                ? 100.0
-                : MediaQuery.of(context).size.height / 2 - 100,
-            left: MediaQuery.of(context).size.width / 2 - 100,
+          Center(
             child: Image.asset(
               'assets/logo.png',
               width: 200,
               height: 200,
-            ),
-          ),
-          FadeTransition(
-            opacity: _animation,
-            child: Center(
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const LoginScreen(),
-                    ),
-                  );
-                },
-                child: const Text('Proceed to Login'),
-              ),
             ),
           ),
         ],

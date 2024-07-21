@@ -10,9 +10,9 @@ class MapPage extends StatelessWidget {
       color: Colors.white,
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
-      child: Column(
+      child: ListView(
         children: [
-          const SizedBox(height: 50),
+          const SizedBox(height: 10),
           Container(
             width: MediaQuery.of(context).size.width,
             child: Text(

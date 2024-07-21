@@ -10,7 +10,7 @@ class EventsPage extends StatelessWidget {
       color: Colors.white,
       child: ListView(
         children: [
-          const SizedBox(height: 50),
+          const SizedBox(height: 10),
           Container(
             width: MediaQuery.of(context).size.width,
             child: Text(
@@ -46,15 +46,13 @@ class EventsPage extends StatelessWidget {
                   fontFamily: 'Poppins',
                 ),
           ),
-          const SizedBox(height: 20),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
               children: List.generate(
                 5, // Change this number to however many items you want
                 (index) => Container(
-                  width: 100,
-                  height: 100,
+                  padding: EdgeInsets.all(10),
                   margin: const EdgeInsets.all(8.0),
                   decoration: BoxDecoration(
                     color: const Color(0xFFEFEDFF),
@@ -65,16 +63,42 @@ class EventsPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(
                         10), // Add rounded corners if desired
                   ),
-                  child: Center(
-                    child: Text(
-                      'Item $index',
-                      style: const TextStyle(color: Colors.black),
+                  child: Column(children: [
+                    Align(
+                      alignment: Alignment.topLeft,
+                      child: Container(
+                        padding: EdgeInsets.only(left: 10, right: 10),
+                        child: Text('Now happening'),
+                        decoration: BoxDecoration(
+                          color: Color(0xFFFEFFE2),
+                          border: Border.all(
+                            color: Color(0xFF41B4AE),
+                            width: 1,
+                          ),
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                      ),
                     ),
-                  ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      'Catch The Flag',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ]),
                 ),
               ),
             ),
-          )
+          ),
+          SizedBox(
+            height: 30,
+          ),
         ],
       ),
     );

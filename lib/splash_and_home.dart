@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yess_app/navigation.dart';
 import 'login.dart';
 
 class SplashScreenAndHome extends StatefulWidget {
@@ -19,7 +20,7 @@ class _SplashScreenAndHomeState extends State<SplashScreenAndHome> {
     await Future.delayed(const Duration(seconds: 3));
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) => const LoginScreen()),
+      MaterialPageRoute(builder: (context) => MainNavigationPage()),
     );
   }
 

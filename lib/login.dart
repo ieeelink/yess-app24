@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yess_app/navigation.dart';
 import 'map.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -101,7 +102,7 @@ class _LoginScreenState extends State<LoginScreen>
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => MapPage(),
+                                  builder: (context) => MainNavigationPage(),
                                 ));
                           },
                           child: const Text(

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:yess_app/navigation.dart';
-import 'login.dart';
+import 'package:yess_app/presentation/home/home.dart';
 
 class SplashScreenAndHome extends StatefulWidget {
   const SplashScreenAndHome({super.key});
@@ -28,21 +27,27 @@ class _SplashScreenAndHomeState extends State<SplashScreenAndHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Stack(
+      body: Column(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Align(
-            alignment: Alignment.topCenter,
-            child: Image.asset('assets/splash_top.png'),
-          ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Image.asset('assets/splash_bottom.png'),
+          Expanded(
+            child: Align(
+              alignment: Alignment.topCenter,
+              child: Image.asset('assets/splash_top.png'),
+            ),
           ),
           Center(
             child: Image.asset(
               'assets/logo.png',
               width: 200,
               height: 200,
+            ),
+          ),
+          Expanded(
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: Image.asset('assets/splash_bottom.png'),
             ),
           ),
         ],

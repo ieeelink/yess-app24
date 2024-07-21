@@ -1,17 +1,7 @@
 import 'package:flutter/material.dart';
-import 'events.dart'; // Import the EventsPage widget
-import 'map.dart'; // Import the MapPage widget
-import 'profile.dart'; // Import the ProfilePage widget
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(useMaterial3: true),
-      home: MainNavigationPage(),
-    );
-  }
-}
+import '../events/events.dart';
+import '../map/map.dart';
+import '../profile/profile.dart';
 
 class MainNavigationPage extends StatefulWidget {
   @override
@@ -22,15 +12,15 @@ class _MainNavigationPageState extends State<MainNavigationPage> {
   int currentPageIndex = 0;
 
   final List<Widget> pages = [
-    EventsPage(), // Using imported EventsPage widget
-    MapPage(), // Using imported MapPage widget
-    ProfilePage(), // Using imported ProfilePage widget
+    EventsPage(),
+    MapPage(),
+    ProfilePage(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: pages[currentPageIndex], // Displays the selected page
+      body: pages[currentPageIndex],
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: (int index) {
           setState(() {
@@ -45,7 +35,7 @@ class _MainNavigationPageState extends State<MainNavigationPage> {
           ),
           NavigationDestination(
             icon: Icon(Icons.map),
-            label: 'Map',
+            label: 'Mapd',
           ),
           NavigationDestination(
             icon: Icon(Icons.person),

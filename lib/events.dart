@@ -52,46 +52,66 @@ class EventsPage extends StatelessWidget {
               children: List.generate(
                 5, // Change this number to however many items you want
                 (index) => Container(
-                  padding: EdgeInsets.all(10),
+                  padding: EdgeInsets.all(20),
                   margin: const EdgeInsets.all(8.0),
                   decoration: BoxDecoration(
                     color: const Color(0xFFEFEDFF),
                     border: Border.all(
                       color: Colors.black,
-                      width: 1,
+                      width: 0.5,
                     ),
                     borderRadius: BorderRadius.circular(
-                        10), // Add rounded corners if desired
+                        20), // Add rounded corners if desired
                   ),
-                  child: Column(children: [
-                    Align(
-                      alignment: Alignment.topLeft,
-                      child: Container(
-                        padding: EdgeInsets.only(left: 10, right: 10),
-                        child: Text('Now happening'),
-                        decoration: BoxDecoration(
-                          color: Color(0xFFFEFFE2),
-                          border: Border.all(
-                            color: Color(0xFF41B4AE),
-                            width: 1,
+                  child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          padding: EdgeInsets.only(left: 10, right: 10),
+                          child: Text('Now happening'),
+                          decoration: BoxDecoration(
+                            color: Color(0xFFFEFFE2),
+                            border: Border.all(
+                              color: Color(0xFF41B4AE),
+                              width: 0.5,
+                            ),
+                            borderRadius: BorderRadius.circular(30),
                           ),
-                          borderRadius: BorderRadius.circular(30),
                         ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Text(
-                      'Catch The Flag',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                      ),
-                    ),
-                  ]),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          'Catch The Flag',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontFamily: 'Poppins',
+                            fontSize: 20,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        Text(
+                          'lets cook your hacking skills',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontFamily: 'Poppins',
+                            fontSize: 15,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          '10:00 AM - 11:00 PM',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontFamily: 'Poppins',
+                            fontSize: 20,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ),
+                      ]),
                 ),
               ),
             ),

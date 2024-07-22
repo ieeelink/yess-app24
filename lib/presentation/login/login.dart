@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:yess_app/presentation/home/home.dart';
-import '../map/map.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
